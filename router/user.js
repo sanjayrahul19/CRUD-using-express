@@ -19,7 +19,7 @@ router.post("/add", async (req, res) => {
 
 router.get("/details", async (req, res) => {
   try {
-    const user = await User.find().select("-_id -__v").sort({ name: 1 });
+    const user = await User.find().select("-__v").sort({ name: 1 });
     res.json(user);
   } catch (err) {
     console.log(err);
